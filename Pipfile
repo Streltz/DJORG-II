@@ -12,6 +12,7 @@ whitenoise = "*"
 virtualenv = "*"
 setuptools = "*"
 djangorestframework = "*"
+graphene-django = "*"
 
 [dev-packages]
 

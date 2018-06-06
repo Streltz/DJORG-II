@@ -21,6 +21,8 @@ from rest_framework.authtoken import views
 from rest_framework import routers
 from notes.api import NoteViewSet
 
+from graphene_django.views import GraphQLView
+
 router = routers.DefaultRouter()
 router.register(r'notes', NoteViewSet)
 
@@ -30,6 +32,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('bookmarks/', include('bookmarks.urls')),
 
+    path('graphql/', GraphQLView.as_view(graphiql=True)),
     path('api/', include(router.urls)),
+
+
     re_path(r'^api-token-auth/', views.obtain_auth_token)
 ]
